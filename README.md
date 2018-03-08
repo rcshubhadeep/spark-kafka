@@ -53,6 +53,6 @@ After these steps are done you are ready to roll. My usual setup looks like the 
 
 ![Usual Setup](usual_setup.png)
 
-__All these steps involving Kafka and Other related software is going to run the entire setup in your 
+__All these steps involving Kafka and other related softwares are going to run the entire setup in your 
 local machine. As a single node setup. You can, however, set them up in a remote server / cluster if you so wish.
-That practically changes nothing to the code almost.__
+That practically changes nothing to the code; almost.__
