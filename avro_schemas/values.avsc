@@ -1,0 +1,36 @@
+{
+    "namespace": "values1.avro",
+    "type": "record",
+    "name": "Values1",
+    "fields": [
+        {
+            "name": "name",
+            "type": [
+                "string"
+            ]
+        },
+        {
+            "name": "visted",
+            "type": [
+                "string"
+            ]
+        },
+        {
+            "name": "cookieid",
+            "type": [
+                "string"
+            ]
+        },
+        {
+            "name": "refered_from",
+            "type": [
+                "string"
+            ]
+        },
+        {
+            "name": "event_time",
+            "type": "long",
+            "logicalType": "timestamp-millis"
+        }
+    ]
+}
