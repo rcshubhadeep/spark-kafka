@@ -3,13 +3,13 @@
 This is an example repo featuring code to show different aspects of Stream Processing using [Apache Kafka](https://kafka.apache.org/)
 and [Apache Spark](https://spark.apache.org/docs/latest/index.html). It has few interesting features. e.g.
 
-*) It has various different examples of producer and consumer (Plain Text, JSON, Apache Avro)
+* It has various different examples of producer and consumer (Plain Text, JSON, Apache Avro)
 
-*) It follows closely [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
+* It follows closely [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
 by Martin Flower, thus making is extremely flexible to be extended and re-used. I can even make a case that one 
 can easily use this as a template to create bigger production level applications.
 
-*) It shows some different use cases of Stream Processing.
+* It shows some different use cases of Stream Processing.
 
 ## Installation
 
