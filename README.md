@@ -36,19 +36,19 @@ However to install Kafka and other related confluent softwares the steps are fol
 
 4.> Open two terminals and input the following commands exactly in that order from each of them (you have to be in the Kafka dir that you just unzipped)
 
-    ```
+    
     bin/zookeeper-server-start.sh config/zookeeper.properties
     bin/kafka-server-start.sh config/server.properties
-    ```
+    
 5.> Download the latest confluent platform [here](https://www.confluent.io/download/) (Choose the Open Source version)
 
 6.> Unzip it somewhere
 
 7.> Open a new terminal. Navigate to that dir and then run the following command
 
-    ```
+    
     bin/schema-registry-start etc/schema-registry/schema-registry.properties
-    ```
+    
 After these steps are done you are ready to roll. My usual setup looks like the image following - 
 
 ![Usual Setup](usual_setup.png)
