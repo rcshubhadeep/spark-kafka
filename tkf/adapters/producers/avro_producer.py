@@ -1,16 +1,17 @@
 from confluent_kafka import avro
 from confluent_kafka.avro import AvroProducer
 
-BASE_PATH = "/home/shubadeep/kpler/pyproj/kafka-ex/exproj/avro_schemas/{}"
-
-keys_schema_file = "keys.avsc"
-values_schema_file = "values.avsc"
+from tkf.shared.exceptions import NoAvroSchemaFileException
 
 
 class AvroProducerAdapter(object):
 
-    def __init__(self, key_name='ex-key', topic='test'):
-        self.value_schema = avro.load(BASE_PATH.format(values_schema_file))
+    def __init__(self, value_schmea_loc=None,
+                 key_name='ex-key',
+                 topic='test'):
+        if not value_schmea_loc:
+            raise NoAvroSchemaFileException()
+        self.value_schema = avro.load(value_schmea_loc)
         self.avro_producer = AvroProducer({'bootstrap.servers': 'localhost:9092',
                                            'schema.registry.url': 'http://127.0.0.1:8081'},
                                           default_value_schema=self.value_schema)

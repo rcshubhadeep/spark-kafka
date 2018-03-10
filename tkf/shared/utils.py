@@ -1,5 +1,5 @@
 import time
 
 
-def current_milli_time():
+def current_time_in_millis():
     return int(round(time.time() * 1000))
