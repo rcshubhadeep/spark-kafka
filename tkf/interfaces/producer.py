@@ -27,18 +27,20 @@ REFERRER = ['http://google.com',
 def produce_data():
     avro_file = BASE_PATH.format(values_schema_file)
     prdcr = get_producer('test', producer_type='avro', value_schmea_loc=avro_file)
-    # while True:
-    for i in range(10):
-        name, cid = choose_randomly_from(USERS)
-        visited, _ = choose_randomly_from(TARGETS)
-        refr, _ = choose_randomly_from(REFERRER)
-        event_data = {"name": name,
-                      "visted": visited,
-                      "cookieid": cid,
-                      "refered_from": refr,
-                      "event_time": current_time_in_millis()}
-        prdcr.produce_message(event_data)
-    # time.sleep(5)
+    while True:
+        print("Sending the next batch")
+        for i in range(10):
+            name, cid = choose_randomly_from(USERS)
+            visited, _ = choose_randomly_from(TARGETS)
+            refr, _ = choose_randomly_from(REFERRER)
+            event_data = {"name": name,
+                          "visted": visited,
+                          "cookieid": cid,
+                          "refered_from": refr,
+                          "event_time": current_time_in_millis()}
+            prdcr.produce_message(event_data)
+        print("Sleeping for 5 seconds - *******")
+        time.sleep(5)
 
 
 if __name__ == "__main__":
