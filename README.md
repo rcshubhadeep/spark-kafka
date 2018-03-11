@@ -34,7 +34,7 @@ However to install Kafka and other related confluent softwares the steps are fol
 
 3.> Unzip it in a directory.
 
-4.> Open two terminals and input the following commands exactly in that order from each of them (you have to be in the Kafka dir that you just unzipped)
+4.> Open two terminals and input the following commands exactly in that order in each of them (you have to be in the Kafka dir that you just unzipped)
 
     
     bin/zookeeper-server-start.sh config/zookeeper.properties
