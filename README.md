@@ -60,3 +60,34 @@ That practically changes nothing to the code; almost.__
 ## To test some producer and consumers
 
 The code in this basic example project is almost self sufficient. If you have followed properly the instructions above then you need not to setup or configure anything else. Assuming that you had indeed followed the process of initial set up and had been successful in doing so here is what you need to do to run a sliding window based producer and consumer.
+
+* Start two terminals.
+
+* Activate the virtualenv that you had created and installed all the libraries and this package into
+
+* from the first one issue this command - `./bin/start_consumer.sh`
+
+* Wait few sec until it goes into consumption.
+
+* Now, from the second terminal, issue this command - `./bin/start_producer.sh` 
+
+* You will see the total number of visited event is getting reported on a sliding window based manner in the consumer terminal while the producer keeps on producing the messages.
+
+* Additionally, if you want to experiment with other consumer and producers, you can do so. The scripts in the `interfaces` package uses [Python Fire](https://github.com/google/python-fire) as an entry point to the function they expose with the type of producer and/or consumer and the topic name totally configurable as a command line option. For an example to start a simple text (JSON) based consumer and producer you can issue the following commands in the same order as depicted - 
+
+
+        spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.0.2 tkf/interfaces/consumer.py --consumer_type=simple_spark --topic_name=test2
+        python tkf/interfaces/producer.py --producer_type=simple --topic_name=test2
+
+
+## Improvement
+
+To use this as a template for production grade projects you need to, at least, do the two following things -
+
+* Implement a centralized anc configurable logging.
+
+* Implement Configuration management.
+
+## Conclusion
+
+The code in this example repo is not doing anything complicated. The primary focus of this repo is to accompany my Medium post about Stream Processing. However, thanks to Clean Architecture, this code can be easily adapted as the template of any production grade project.
