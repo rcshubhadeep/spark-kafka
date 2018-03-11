@@ -1,10 +1,12 @@
 import time
 
+import fire
+
 from tkf.adapters.producers.producer import get_producer
 from tkf.interfaces.helpers import choose_randomly_from
-from tkf.shared.utils import current_time_in_millis
+from tkf.shared.utils import current_time_in_millis, get_project_dir
 
-BASE_PATH = "/home/shubadeep/kpler/pyproj/kafka-ex/exproj/avro_schemas/{}"
+BASE_PATH = get_project_dir()
 values_schema_file = "values.avsc"
 
 USERS = {'john': 'we0328nhe9t83', 'sid': '8905fjgf568', 'vasu': '342362hfg764r'}
@@ -24,9 +26,9 @@ REFERRER = ['http://google.com',
             ]
 
 
-def produce_data():
+def produce_data(producer_type='avro', topic_name='test'):
     avro_file = BASE_PATH.format(values_schema_file)
-    prdcr = get_producer('test', producer_type='avro', value_schmea_loc=avro_file)
+    prdcr = get_producer(topic_name, producer_type=producer_type, value_schmea_loc=avro_file)
     while True:
         print("Sending the next batch")
         for i in range(10):
@@ -44,4 +46,4 @@ def produce_data():
 
 
 if __name__ == "__main__":
-    produce_data()
+    fire.Fire(produce_data)

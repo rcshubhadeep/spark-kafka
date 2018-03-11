@@ -11,6 +11,7 @@ requires = [
     'avro-python3>=1.8.2',
     'confluent-kafka>=0.11.0',
     'fastavro>=0.17.9',
+    'fire>=0.1.3',
     'pyspark>=2.3.0'
 ]
 

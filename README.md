@@ -56,3 +56,7 @@ After these steps are done you are ready to roll. My usual setup looks like the 
 __All these steps involving Kafka and other related softwares are going to run the entire setup in your 
 local machine. As a single node setup. You can, however, set them up in a remote server / cluster if you so wish.
 That practically changes nothing to the code; almost.__
+
+## To test some producer and consumers
+
+The code in this basic example project is almost self sufficient. If you have followed properly the instructions above then you need not to setup or configure anything else. Assuming that you had indeed followed the process of initial set up and had been successful in doing so here is what you need to do to run a sliding window based producer and consumer.
