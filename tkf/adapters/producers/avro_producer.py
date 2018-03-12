@@ -6,9 +6,9 @@ from tkf.shared.exceptions import NoAvroSchemaFileException
 
 class AvroProducerAdapter(object):
 
-    def __init__(self, value_schmea_loc=None,
-                 key_name='ex-key',
-                 topic='test'):
+    def __init__(self, value_schmea_loc: str=None,
+                 key_nameL: str='ex-key',
+                 topic: str='test'):
         if not value_schmea_loc:
             raise NoAvroSchemaFileException()
         self.value_schema = avro.load(value_schmea_loc)
@@ -17,6 +17,9 @@ class AvroProducerAdapter(object):
                                           default_value_schema=self.value_schema)
         self.topic = topic
 
-    def produce_message(self, val):
+    def produce_message(self, val: dict):
+        """Write message in avro encoded format to Kafka topic
+
+        """
         self.avro_producer.produce(topic=self.topic, value=val)
         self.avro_producer.flush()
